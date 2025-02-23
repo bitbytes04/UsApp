@@ -1,0 +1,28 @@
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react'
+
+export default function CTA_Button(props) {
+
+
+  const {title, color} = props;
+
+  const styles = StyleSheet.create({
+    button:{
+      paddingLeft: 5,
+      paddingRight: 5,
+      paddingTop: 2,
+      paddingBottom:2,
+      borderWidth:1,
+      borderBottomWidth: 3,
+      borderRightWidth: 3,
+      backgroundColor: (color? color: '#fad4e1'),
+      borderRadius: 3,
+    
+    }
+  })
+  return (
+    <TouchableOpacity style={styles.button}>
+      <Text>{title}</Text>
+    </TouchableOpacity>
+  )
+}

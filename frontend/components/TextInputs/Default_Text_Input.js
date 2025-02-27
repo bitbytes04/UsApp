@@ -5,7 +5,7 @@ export default function Default_Text_Input(props) {
 
 
 
-  const { label, placeholder, bgcolor, labelColor, setter, getter, secure, width } = props;
+  const { label, placeholder, bgcolor, labelColor, setter, getter, secure, width, style, type, } = props;
 
   const styles = StyleSheet.create({
     text_input: {
@@ -14,12 +14,13 @@ export default function Default_Text_Input(props) {
       paddingTop: 2,
       paddingBottom: 2,
       backgroundColor: (bgcolor ? bgcolor : 'white'),
-      maxWidth: '80%',
+      // maxWidth: '80%',
       flexGrow: 1,
       borderBottomRightRadius: 3,
       borderTopRightRadius: 3,
-      fontSize: 18
-
+      fontSize: 18,
+      overflow: 'scroll',
+      flex: 10
 
     },
     container: {
@@ -33,6 +34,10 @@ export default function Default_Text_Input(props) {
       borderTopWidth: 1,
       borderLeftWidth: 1,
       width: (width ? width : '100%'),
+      maxHeight: 35,
+      alignItems: 'center',
+      justifyContent: 'center'
+
     },
     label: {
       color: 'white',
@@ -42,14 +47,21 @@ export default function Default_Text_Input(props) {
       paddingRight: 10,
       paddingTop: 2,
       paddingBottom: 2,
-      minWidth: '25%',
+      minWidth: '10%',
+      height: 35,
+      verticalAlign: 'middle'
     }
   })
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Text style={styles.label}>{label}:</Text>
-      <TextInput style={styles.text_input} placeholder={placeholder} onChangeText={setter} value={getter} secureTextEntry={secure} />
+      <TextInput keyboardType={(type ? type : 'default')}
+        style={styles.text_input}
+        placeholder={placeholder}
+        onChangeText={setter}
+        value={getter}
+        secureTextEntry={secure} />
     </View>
 
   )

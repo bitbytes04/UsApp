@@ -30,7 +30,7 @@ export default function CTA_Button(props) {
     }
   })
   return (
-    <TouchableOpacity onPress={onPress} style={(buttonStyle ? buttonStyle : styles.button)}>
+    <TouchableOpacity onPress={onPress} style={[styles.button, buttonStyle]}>
       <Text style={(titleStyle ? titleStyle : styles.text)}>{title}</Text>
     </TouchableOpacity>
   )

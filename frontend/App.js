@@ -76,7 +76,7 @@ export default function App() {
       orientation: 'portrait_up'
     },
     landscape: {
-      title: 'Board Title', headerStyle: {}, orientation: 'landscape_right'
+      title: 'Board Title', headerStyle: {}, orientation: 'landscape_right', headerShown: false
     },
   }
 

@@ -118,7 +118,6 @@ const MyBoards = () => {
                             </TouchableOpacity>
                             <Text style={{ color: 'white', margin: 10, marginLeft: 20, fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>MY BOARDS</Text>
                         </ImageBackground>
-
                         <View style={{ flexGrow: 1, padding: 20, paddingTop: 40 }}>
                             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 10 }}>
                                 {data_sample.map((board, index) => {

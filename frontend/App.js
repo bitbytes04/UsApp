@@ -11,6 +11,7 @@ import Settings from './components/Pages/Settings';
 import MyBoards from './components/Pages/MyBoards';
 import CreateBoard from './components/Pages/CreateBoard';
 import BoardInterface from './components/Pages/BoardInterface';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
 
@@ -37,11 +38,12 @@ export default function App() {
       headerStyle: {
         backgroundColor: '#3e6888'
       },
-      headerTintColor: 'white'
+      headerTintColor: 'white',
+      orientation: 'portrait_up'
     },
-    signup: {
+    create: {
 
-      title: 'USER SIGNUP',
+      title: 'CREATE A BOARD',
       headerTitleStyle: {
         textAlign: 'center',
         fontWeight: 'bold',
@@ -53,25 +55,45 @@ export default function App() {
       headerStyle: {
         backgroundColor: '#17616e'
       },
-      headerTintColor: 'white'
+      headerTintColor: 'white',
+      orientation: 'portrait_up'
+    },
+    login: {
+
+      title: 'USER LOGIN',
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        textShadowColor: '#000',
+        textShadowOffset: { width: 0.5, height: 0.5 },
+        textShadowRadius: 1
+
+      },
+      headerStyle: {
+        backgroundColor: '#3e6888'
+      },
+      headerTintColor: 'white',
+      orientation: 'portrait_up'
     },
     landscape: {
-      title: 'CREATE YOUR BOARD', headerStyle: {}, orientation: 'landscape'
+      title: 'Board Title', headerStyle: {}, orientation: 'landscape_right'
     },
   }
 
   return (
-    <NavigationContainer>
-      <SNavigation.Navigator initialRouteName='Landing'>
-        <SNavigation.Screen options={screenStyles.default} name='Landing' component={LandingPage} />
-        <SNavigation.Screen options={screenStyles.login} name='Login' component={LoginPage} />
-        <SNavigation.Screen options={screenStyles.signup} name='SignUp' component={SignUpPage} />
-        <SNavigation.Screen options={screenStyles.default} name='Dashboard' component={UserDashboard} />
-        <SNavigation.Screen options={screenStyles.default} name='Settings' component={Settings} />
-        <SNavigation.Screen options={screenStyles.default} name='MyBoards' component={MyBoards} />
-        <SNavigation.Screen options={screenStyles.landscape} name='CreateBoards' component={CreateBoard} />
-        <SNavigation.Screen options={screenStyles.landscape} name='BoardInterface' component={BoardInterface} />
-      </SNavigation.Navigator>
-    </NavigationContainer>
+    <GestureHandlerRootView>
+      <NavigationContainer>
+        <SNavigation.Navigator initialRouteName='Landing'>
+          <SNavigation.Screen options={screenStyles.default} name='Landing' component={LandingPage} />
+          <SNavigation.Screen options={screenStyles.login} name='Login' component={LoginPage} />
+          <SNavigation.Screen options={screenStyles.signup} name='SignUp' component={SignUpPage} />
+          <SNavigation.Screen options={screenStyles.default} name='Dashboard' component={UserDashboard} />
+          <SNavigation.Screen options={screenStyles.default} name='Settings' component={Settings} />
+          <SNavigation.Screen options={screenStyles.default} name='MyBoards' component={MyBoards} />
+          <SNavigation.Screen options={screenStyles.create} name='CreateBoard' component={CreateBoard} />
+          <SNavigation.Screen options={screenStyles.landscape} name='BoardInterface' component={BoardInterface} />
+        </SNavigation.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }

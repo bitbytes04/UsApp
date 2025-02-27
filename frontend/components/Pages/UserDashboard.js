@@ -113,7 +113,7 @@ const App = () => {
                 <Text style={{ textAlign: 'right', textDecorationLine: 'underline', margin: 10 }}> See all →</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={{ height: 70, width: 70, borderRadius: 70 / 2, padding: 10, backgroundColor: '#043b64', justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: 50, right: 50 }}>
+            <TouchableOpacity onPress={() => { navigation.navigate('CreateBoard') }} style={{ height: 70, width: 70, borderRadius: 70 / 2, padding: 10, backgroundColor: '#043b64', justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: 50, right: 50 }}>
               <Text style={{ color: 'white', fontSize: 50, verticalAlign: 'middle', position: 'absolute', top: 0 }}>+</Text>
             </TouchableOpacity>
           </View>

@@ -111,7 +111,6 @@ const MyBoards = () => {
                 drawerPosition={drawerPosition}
                 renderNavigationView={navigationView}>
                 <SafeAreaView style={[styles.container, { height: '100%' }]}>
-
                     <View style={{ height: '100%' }}>
                         <ImageBackground resizeMode='cover' style={{ height: '120', width: '100%', position: 'relative', display: 'flex', justifyContent: 'flex-end' }} source={require('../../assets/backgrounds/cover_img.png')}>
                             <TouchableOpacity style={{ position: 'absolute', top: 15, left: 15 }} onPress={() => { drawer.current.openDrawer() }}>
@@ -129,7 +128,7 @@ const MyBoards = () => {
                                 })}
                             </View>
                         </View>
-                        <TouchableOpacity style={{ height: 70, width: 70, borderRadius: 70 / 2, padding: 10, backgroundColor: '#043b64', justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: 50, right: 50 }}>
+                        <TouchableOpacity onPress={() => { navigation.navigate('CreateBoard') }} style={{ height: 70, width: 70, borderRadius: 70 / 2, padding: 10, backgroundColor: '#043b64', justifyContent: 'center', alignItems: 'center', position: 'absolute', bottom: 50, right: 50 }}>
                             <Text style={{ color: 'white', fontSize: 50, verticalAlign: 'middle', position: 'absolute', top: 0 }}>+</Text>
                         </TouchableOpacity>
                     </View>
